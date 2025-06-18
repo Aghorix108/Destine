@@ -1,0 +1,843 @@
+.main-container {
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url("https://images.pexels.com/photos/1253752/pexels-photo-1253752.jpeg")
+      center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+.hero-heading-container {
+  text-align: center;
+  margin-top: 12rem;
+  color: #fff;
+  padding: 0 2rem;
+  max-width: 800px;
+}
+
+.hero-heading-container > h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-heading-container > p {
+  font-size: 1.25rem;
+  margin-top: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Destination Section */
+.destination-section {
+  height: 15vh;
+  background-color: white;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.destination-container {
+  width: 80vw;
+  height: 10vh;
+  position: absolute;
+  top: -30%;
+  border-radius: 10rem;
+  background-color: #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  padding: 3rem 1rem;
+  gap: 2rem;
+  z-index: 10;
+  align-content: center;
+}
+
+.destination-input-container {
+  display: flex;
+  align-items: center;
+  /* background: #f9f9f9; */
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.destination-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  position: relative;
+  justify-content: center;
+}
+.destination-input-container:hover,
+.destination-input-container:focus-within {
+  box-shadow: 0 0 8px rgba(255, 0, 153, 0.3);
+}
+
+.destination-input-container > label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.destination-input-container > input {
+  /* border-radius: 2rem; */
+  /* border: 1px solid #ccc; */
+  border: none;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  transition: border 0.3s;
+  width: 100%;
+}
+
+.destination-input-container > input:focus {
+  /* border: 1px solid rgb(255, 0, 153); */
+  outline: none;
+}
+
+/* Search Button */
+.destination-container-search {
+  width: 100%;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  background-color: rgb(255, 0, 153);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+.destination-container-search:hover {
+  background-color: black;
+  transform: translateY(-2px);
+}
+
+.popular-packages-section {
+  min-height: 80vh;
+  /* max-height: 100vh; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 1rem;
+}
+.section-heading {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 500;
+}
+.section-description {
+  font-size: 1.2rem;
+  text-align: center;
+  color: gray;
+}
+.popular-packages-card-ctontainer {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  padding: 0 4rem 0 4rem;
+}
+
+.popular-packages-cards {
+  min-height: 30rem;
+  max-height: 30rem;
+  /* height: 100%; */
+  width: 100%;
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+  /* padding: ; */
+}
+.popular-packages-cards img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+}
+.card-heading {
+  position: absolute;
+  left: 0;
+  color: white;
+  padding: 1rem;
+  font-size: 0.8rem;
+  bottom: 0;
+  z-index: 1;
+  transition: ease-in 0.3s;
+}
+.card-heading h1 {
+  font-weight: 600;
+}
+.card-heading h3 {
+  font-weight: 500;
+}
+.card-heading > p {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: transform 0.5s ease, transform 0.5s ease;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.545);
+  opacity: 0.3;
+  transition: ease-in 0.3s;
+}
+
+.popular-packages-cards:hover .card-heading {
+  transform: translateY(-20px); /* Move heading up */
+}
+
+.popular-packages-cards:hover .card-heading p {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.popular-packages-cards:hover .overlay,
+.popular-packages-cards:hover .text-overlay {
+  opacity: 1;
+}
+
+.popular-packages-cta-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popular-package-cta {
+  padding: 0.5rem 1rem;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  background-color: rgb(255, 0, 153);
+  padding: 0.5rem 2rem;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.popular-package-cta:hover {
+  background-color: black;
+  color: white;
+}
+
+.value-section {
+  min-height: 60vh;
+  width: 100%;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+/* .value-section-heading h1.section-heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+} */
+
+.value-section-heading p.section-description {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.value-cards-container {
+  width: 100%;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  padding: 2rem 10rem;
+  margin-top: 3rem;
+}
+
+.value-cards {
+  background-color: #fff;
+  /* min-height: 28rem; */
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  gap: 2rem;
+  border: 1px solid rgba(224, 224, 224, 0.832);
+  transition: all 0.4s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.value-cards:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.icon-container {
+  padding: 1.2rem;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(221, 221, 221, 0.866);
+  box-shadow: 0 8px 20px rgba(221, 221, 221, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.value-cards:hover .icon-container {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 0, 153, 0.2);
+}
+
+.value-card-content h1 {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.value-card-content p {
+  width: 90%;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.value-card-cta {
+  color: rgb(255, 0, 153);
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.value-card-cta:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.values-video {
+  height: 70vh;
+  width: 100%;
+  padding: 2rem 10rem;
+  overflow: hidden;
+}
+.values-video > video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2rem;
+}
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh; /* or 100vh for full screen */
+  width: 100%;
+  background: #000; /* optional: black background */
+}
+
+.centered-video {
+  max-width: 90%;
+  height: auto;
+  border-radius: 1rem; /* optional: rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* optional: subtle shadow */
+}
+
+.travel-recommendations-section {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10rem 0 10rem;
+  margin-top: 4rem;
+}
+.travel-recommendatoins-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.travel-recommendatoins-header h1 {
+  font-weight: 500;
+  font-size: 3rem;
+}
+.travel-recommendatoins-header p {
+  color: gray;
+}
+
+.travel-recommendatoins-header button {
+  padding: 0.5rem 1rem;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  background-color: rgb(255, 0, 153);
+  padding: 0.5rem 2rem;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.travel-recommendatoins-header button:hover {
+  background-color: black;
+  color: white;
+}
+.travel-recommendatoins-card-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 0rem;
+  margin-top: 1rem;
+}
+
+.travel-recommendations-cards {
+  min-height: 60vh;
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+  border-radius: 1rem;
+  /* border: 1px solid rgba(128, 128, 128, 0.342); */
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.072);
+
+  transition: transform ease-in 0.4s;
+  overflow: hidden;
+}
+
+.travel-recommendations-cards:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.178);
+  transform: translateY(-10px);
+  border: none;
+}
+
+.travel-recommendations-cards img {
+  height: 60%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.recommendations-card-heading {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.recommendations-card-heading h1 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.travel-recommendations-cards p {
+  padding: 0 1rem;
+  color: gray;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recommendation-card-footer {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.recommendation-card-footer h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.recommendation-card-cta {
+  padding: 0.5rem 1rem;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  background-color: rgb(255, 0, 153);
+  /* padding: 0.5rem 2rem; */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.recommendation-card-cta:hover {
+  background-color: black;
+  color: white;
+}
+.blogs-section {
+  min-height: 70vh;
+  margin-top: 4rem;
+  padding: 0 0 2rem 0;
+}
+
+.blogs-cards-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 10rem;
+  margin-top: 1rem;
+}
+.blog-cards {
+  min-height: 40vh;
+  max-height: 50vh;
+  /* height: 100%; */
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.193);
+  transition: transform ease-in 0.4s;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-cards img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform ease-in 0.5s;
+}
+.blog-cards:hover img {
+  transform: scale(110%);
+}
+.blog-card-overlay {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.403);
+  position: absolute;
+  opacity: 0.8;
+}
+.blog-card-content {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #ffffff;
+  padding: 1rem;
+}
+.blog-card-content h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.blog-cards:hover .blog-card-overlay {
+  opacity: 1;
+}
+.blog-section-cta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blog-section-cta button {
+  padding: 0.5rem 1rem;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  background-color: rgb(255, 0, 153);
+  /* padding: 0.5rem 2rem; */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.blog-section-cta button:hover {
+  background-color: black;
+  color: white;
+}
+
+.mail-subscription-section {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.subscription-section-heading {
+  padding: 0 12rem;
+}
+.subscription-section-description {
+  padding: 0 15em;
+  margin-top: 1rem;
+}
+.subscription-section-heading {
+  gap: 2px;
+}
+.subsciption-email-input {
+  width: 50vw;
+  /* padding: 1rem; */
+  border: 1px solid rgba(128, 128, 128, 0.43);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+.icon {
+  color: rgb(255, 0, 153);
+}
+.subsciption-email-input input {
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+}
+.subsciption-email-input input::placeholder {
+  color: gray;
+}
+.subsciption-email-input input:focus {
+  outline: none;
+}
+.subsciption-email-input-button {
+  background-color: rgb(255, 0, 153);
+  border: none;
+  border-radius: 2rem;
+  color: #ffffff;
+  width: 40%;
+  padding: 1rem 1rem;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .values-video,
+  .travel-recommendations-section {
+    padding: 2rem 5rem;
+  }
+
+  .travel-recommendatoins-card-container,
+  .blogs-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 5rem;
+  }
+
+  .value-cards-container {
+    padding: 2rem 5rem;
+  }
+
+  .subscription-section-heading,
+  .subscription-section-description {
+    padding: 0 8rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .hero-section {
+    min-height: 60vh;
+    /* align-items: center; */
+  }
+  .hero-heading-container > h1 {
+    font-size: 3rem;
+    margin-top: 3rem;
+  }
+
+  .destination-container {
+    width: 90vw;
+    grid-template-columns: 1fr;
+    border-radius: 2rem;
+
+    padding: 2rem 1rem;
+    height: auto;
+    top: -100px;
+  }
+
+  .destination-section {
+    height: 30vh;
+  }
+
+  .values-video {
+    height: 50vh;
+    padding: 2rem 3rem;
+  }
+
+  .travel-recommendations-section {
+    padding: 0 3rem;
+  }
+
+  .travel-recommendatoins-card-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 0;
+  }
+
+  .blogs-cards-container {
+    padding: 2rem 3rem;
+  }
+
+  .subsciption-email-input {
+    width: 70vw;
+  }
+
+  .section-heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-heading-container {
+    margin-top: 8rem;
+  }
+
+  .hero-heading-container > h1 {
+    font-size: 2.5rem;
+  }
+
+  .popular-packages-card-ctontainer {
+    padding: 0 2rem;
+  }
+
+  .value-cards-container {
+    padding: 2rem 2rem;
+  }
+
+  .travel-recommendatoins-card-container,
+  .blogs-cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-recommendatoins-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .travel-recommendatoins-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .subscription-section-heading,
+  .subscription-section-description {
+    padding: 0 3rem;
+  }
+
+  .mail-subscription-section {
+    height: auto;
+    padding: 2rem 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero-heading-container > h1 {
+    font-size: 2rem;
+  }
+
+  .hero-heading-container > p {
+    font-size: 1rem;
+  }
+
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .destination-container {
+    width: 90vw;
+    top: -150px;
+  }
+
+  .destination-section {
+    height: 40vh;
+  }
+
+  .values-video {
+    padding: 2rem 1rem;
+  }
+
+  .travel-recommendations-section {
+    padding: 0 1rem;
+  }
+
+  .blogs-cards-container {
+    padding: 2rem 1rem;
+  }
+
+  .subsciption-email-input {
+    width: 90vw;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .subsciption-email-input-button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .subsciption-email-input input {
+    padding: 0.5rem 0;
+  }
+
+  .value-card-content h1 {
+    font-size: 1.3rem;
+  }
+
+  .recommendations-card-heading h1 {
+    font-size: 1.1rem;
+  }
+
+  .recommendation-card-footer h1 {
+    font-size: 1.2rem;
+  }
+
+  .blog-card-content h1 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hero-heading-container {
+    margin-top: 5rem;
+  }
+
+  .hero-heading-container > h1 {
+    font-size: 1.8rem;
+  }
+
+  .destination-container {
+    top: -170px;
+  }
+
+  .destination-section {
+    height: 45vh;
+  }
+
+  .value-cards {
+    padding: 1.5rem 1rem;
+  }
+
+  .travel-recommendations-cards {
+    min-height: 50vh;
+  }
+}
