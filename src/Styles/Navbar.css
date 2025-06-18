@@ -1,0 +1,210 @@
+/* Navbar Container */
+.navbar-container {
+  height: 12vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  color: white;
+  padding: 0 5rem;
+  z-index: 99;
+  transition: all 0.3s ease-in-out;
+}
+
+/* On Scroll */
+.navbar-container.scrolled {
+  background-color: white;
+  color: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Brand */
+.navbar-heading h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Desktop Links */
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.navbar-link-items {
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.navbar-link-items::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+.navbar-link-items:hover::after {
+  width: 100%;
+}
+.navbar-link-items:hover {
+  color: #ff0099;
+}
+
+.scrolled .navbar-link-items:hover {
+  color: #ff0099;
+}
+
+/* CTA Buttons */
+.navbar-cta-container {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.navbar-cta-buttons {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+#navbarLanguage {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+#navbarLanguage:hover {
+  background: white;
+  color: #ff0099;
+}
+
+#navbarGetStarted {
+  background: #ff0099;
+  color: white;
+  border: none;
+}
+#navbarGetStarted:hover {
+  background: white;
+  color: #ff0099;
+}
+
+/* On Scroll CTA */
+.scrolled #navbarLanguage {
+  border-color: black;
+  color: black;
+}
+.scrolled #navbarLanguage:hover {
+  background-color: black;
+  color: white;
+}
+.scrolled #navbarGetStarted {
+  background-color: #ff0099;
+}
+.scrolled #navbarGetStarted:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Hamburger Button */
+.navbar-menu-container {
+  display: none;
+}
+.navbar-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile Navbar */
+.mobile-navbar {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 12vh;
+  left: 0;
+  width: 100%;
+  z-index: 98;
+  padding: 1.5rem 0;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.mobile-navbar-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+}
+.mobile-navbar-link-items {
+  cursor: pointer;
+}
+.mobile-navbar-link-items:hover {
+  color: #ff0099;
+}
+
+.navbar-mobile-cta-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.navbar-mobile-cta-buttons {
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 2px solid #ff0099;
+  background: white;
+  color: #ff0099;
+  transition: all 0.3s ease-in-out;
+}
+.navbar-mobile-cta-buttons:hover {
+  background: #ff0099;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .navbar-links,
+  .navbar-cta-container {
+    display: none;
+  }
+  .navbar-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .navbar-menu-container {
+    display: flex;
+    justify-content: end;
+  }
+  .navbar-menu-btn {
+    display: block;
+    color: inherit;
+  }
+}
